@@ -1,14 +1,16 @@
-package securityPractise
+package securitypractise
 
+import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
+import securityPractise.User
+import securityPractise.UserService
 import static org.springframework.http.HttpStatus.*
-
+@Secured(['ROLE_ADMIN'])
 class UserController {
 
     UserService userService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond userService.list(params), model:[userCount: userService.count()]

@@ -4,10 +4,10 @@ import grails.plugin.springsecurity.annotation.Secured
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic
-
 @GrailsCompileStatic
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
+@Secured(['ROLE_ADMIN'])
 class User implements Serializable {
 
     private static final long serialVersionUID = 1
@@ -24,7 +24,7 @@ class User implements Serializable {
 
     static constraints = {
         password nullable: false, blank: false, password: true
-        username nullable: false, blank: false, unique: true
+        username nullable: true , blank: false, unique: true
     }
 
     static mapping = {

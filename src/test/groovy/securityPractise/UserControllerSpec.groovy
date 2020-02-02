@@ -3,6 +3,7 @@ package securityPractise
 import grails.testing.gorm.DomainUnitTest
 import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException
+import securitypractise.UserController
 import spock.lang.*
 
 class UserControllerSpec extends Specification implements ControllerUnitTest<UserController>, DomainUnitTest<User> {

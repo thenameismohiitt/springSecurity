@@ -1,6 +1,9 @@
-package securityPractise
+package securitypractise
 
 import grails.validation.ValidationException
+import securityPractise.Role
+import securityPractise.RoleService
+
 import static org.springframework.http.HttpStatus.*
 
 class RoleController {
