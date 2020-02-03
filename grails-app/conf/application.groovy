@@ -1,5 +1,3 @@
-
-
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.password.algorithm = 'SHA-256'
 grails.plugin.springsecurity.password.hash.iterations = 1
@@ -22,8 +20,9 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/favicon.ico', access: ['permitAll']],
 	[pattern: '/console/**',     access: ['permitAll']],
 	[pattern:  '/static/console/**', access:['permitAll']],
-	[pattern:  '/plugins/console*/**', access:['permitAll']] // Grails 2.x
-
+	[pattern:  '/plugins/console*/**', access:['permitAll']],
+	[pattern: '/user/**'             , access: ['permitAll']],
+	[pattern: '/role/**' ,				access:['permitAll']]
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
