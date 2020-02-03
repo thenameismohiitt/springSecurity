@@ -14,15 +14,14 @@
 <h1 class="text-center">Before going further verify your credentials</h1>
 <div class="d-flex justify-content-center">
 <form action="${postUrl ?: '/login/authenticate'}" method="POST">
-    <div class="form-group">
-        <g:message code="my.localized.content"/>
+    <label class="form-group">
+        <label for="username"/>Username</label>
         <input type="text" name="${usernameParameter ?: 'username'}"  class="form-control" id="username" aria-describedby="emailHelp"/>
-    </div>
     <div class="form-group">
         <label for="password" >Password</label>
         <input type="password" name="${passwordParameter ?: 'password'}" name="password" class="form-control" id="password" />
     </div>
-    <input type="submit" class="btn btn-primary" value="${message(code: 'springSecurity.login.button')}" />
+    <input type="submit"  class="btn btn-primary" value="${message(code: 'springSecurity.login.button')}" />
 </form>
 </div>
 <!-- Optional JavaScript -->

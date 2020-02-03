@@ -20,7 +20,6 @@ class User implements Serializable {
     Set<Role> getAuthorities() {
         (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
     }
-
     static constraints = {
         password nullable: false, blank: false, password: true
         username nullable: true , blank: false, unique: true
